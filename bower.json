@@ -21,6 +21,7 @@
   "dependencies": {
     "modernizr": "~3.1.0",
     "jquery": "~2.1.4",
-    "fastclick": "~1.0.6"
+    "fastclick": "~1.0.6",
+    "foundation": "~5.5.3"
   }
 }
