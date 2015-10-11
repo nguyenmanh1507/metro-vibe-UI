@@ -2,6 +2,7 @@
 
 var gulp = require('gulp'),
 		sass = require('gulp-sass'),
+		jshint = require('gulp-jshint'),
 		rename = require('gulp-rename'),
 		sourcemaps = require('gulp-sourcemaps'),
 		wiredep = require('wiredep').stream,
@@ -9,7 +10,8 @@ var gulp = require('gulp'),
 		gulpif = require('gulp-if'),
 		uglify = require('gulp-uglify'),
 		minifyCss = require('gulp-minify-css'),
-		del = require('del')
+		del = require('del'),
+		browserSync = require('browser-sync')
 ;
 
 // Scss task
@@ -18,10 +20,8 @@ gulp.task('sass', function() {
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(sourcemaps.write())
-		.pipe(rename({
-			suffix: '.min'
-		}))
 		.pipe(gulp.dest('./app/css'))
+		.pipe(browserSync.stream())
 		;
 });
 
@@ -35,6 +35,17 @@ gulp.task('sass-zf', function() {
 		;
 });
 
+// JSHint task
+gulp.task('lint', function() {
+	return gulp.src('./app/js/*.js')
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'))
+		;
+});
+
+// Reload browser after lint task complete
+gulp.task('js-watch', ['lint'], browserSync.reload);
+
 // Bower task
 gulp.task('bower', function() {
 	return gulp.src('./app/*.html')
@@ -46,7 +57,7 @@ gulp.task('bower', function() {
 });
 
 // Useref task
-gulp.task('useref', function() {
+gulp.task('useref', ['del'], function() {
 	var assets = useref.assets();
 
 	return gulp.src('./app/*.html')
@@ -64,5 +75,19 @@ gulp.task('del', function() {
 	return del('./dist/**');
 });
 
+// BrowserSync task
+gulp.task('serve', function() {
+	browserSync.init({
+		server: './app'
+	});
+
+	gulp.watch('app/scss/**/*.scss', ['sass']);
+	gulp.watch('app/*.html').on('change', browserSync.reload);
+	gulp.watch('app/js/*.js', ['js-watch']);
+});
+
 // Build task
-gulp.task('build', ['del', 'useref']);
+gulp.task('build', ['useref']);
+
+// Default task
+gulp.task('default', ['serve']);
