@@ -22,6 +22,9 @@
   "homepage": "https://github.com/nguyenmanh1507/metro-vibe-UI#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-sass": "^2.0.4"
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "wiredep": "^2.2.2"
   }
 }
