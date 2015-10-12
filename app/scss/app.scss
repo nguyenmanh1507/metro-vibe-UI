@@ -1,12 +1,2 @@
-html {
-	font-size: 1rem;
-}
-
-body {
-	background: tomato;
-	color: white;
-}
-
-h1 {
-	font-size: 1.5em;
-}
+@import 'module/index';
+@import 'base/index';

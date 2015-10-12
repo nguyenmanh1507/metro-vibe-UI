@@ -1,0 +1,16 @@
+// Base Rule
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 1em;
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(90deg, $color-body-1 10%, $color-body-2 90%);
+}
