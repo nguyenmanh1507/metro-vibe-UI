@@ -1,0 +1,6 @@
+// Utilities styles
+@for $i from 1 through 12 {
+	.padding-#{$i} {
+		padding: $line-height*$i 0;
+	}
+}

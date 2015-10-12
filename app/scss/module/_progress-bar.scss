@@ -1,0 +1,19 @@
+// Progress bar style
+.progress {
+	border: rem-calc(1) solid rgb(229, 212, 194);
+	padding: 0;
+	height: rem-calc(30);
+
+	&.secondary .meter {
+		background: $color-secondary;
+	}
+
+	&.warning .meter {
+		background: $color-warning;
+	}
+
+	.meter {
+		background: $color-primary;
+	}
+}
+

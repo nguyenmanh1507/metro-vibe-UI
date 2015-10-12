@@ -13,4 +13,20 @@ html {
 
 body {
 	background: linear-gradient(90deg, $color-body-1 10%, $color-body-2 90%);
+	font-family: $body-font-family;
+	line-height: 1.2;
+	color: $color-body-text;
+}
+
+h1 {
+	margin: 0;
+}
+
+a {
+	color: $color-body-text;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
 }

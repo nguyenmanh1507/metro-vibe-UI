@@ -1,0 +1,26 @@
+// Panel Style
+
+.panel {
+	@include box-shadow($color-box-shadow);
+
+	&__header {
+		background: $color-panel;
+		border-radius: rem-calc(5) rem-calc(5) 0 0;
+		box-shadow: inset 0 rem-calc(-2) rem-calc(2) 0 rgba(73, 73, 73, 0.141);
+
+		&__text {
+			color: $color-white;
+			font-size: rem-calc(18);
+			text-align: center;
+			text-transform: uppercase;
+			margin: 0;
+			padding: em-calc(20) 0;
+		}
+	}
+
+	&__content {
+		background: $color-white;
+		border-radius: 0 0 rem-calc(5) rem-calc(5);
+		padding: em-calc(20);
+	}
+}

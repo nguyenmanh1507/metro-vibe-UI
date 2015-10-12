@@ -4,18 +4,108 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Metro Vibe UI Kit</title>
+	
+	<!-- Google Fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Dosis:400,300,700,800' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="css/lib.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 	<script src="js/modernizr.min.js"></script>
 </head>
 <body>
-	<div class="row">
-		<div class="medium-6 columns">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, accusamus.</p>
-		</div>
-		<div class="medium-6 columns">
-			<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ducimus mollitia atque et harum, a, alias ut aliquid sint consequuntur.</h1>
+	<div class="padding-6">
+		<div class="row">
+			<div class="medium-5 columns">
+				<section class="panel">
+					<header class="panel__header">
+						<h2 class="panel__header__text">Progress Bar</h2>
+					</header>
+					<div class="panel__content">
+						<div class="progress">
+						  <span class="meter" style="width: 80%"></span>
+						</div>
+		
+						<div class="progress secondary">
+						  <span class="meter" style="width: 90%"></span>
+						</div>
+		
+						<div class="progress warning">
+						  <span class="meter" style="width: 67%"></span>
+						</div>
+					</div>
+				</section>
+				<!-- /.panel -->
+			</div>
+			<div class="medium-7 columns">
+				<ul class="tabs">
+					<li class="tab__title active"><a href="#panel1">About</a></li>
+					<li class="tab__title"><a href="#panel2">History</a></li>
+					<li class="tab__title"><a href="#panel3">Past</a></li>
+				</ul>
+				<div class="tabs-content">
+					<div class="content active" id="panel1">
+						<div class="row">
+							<div class="medium-5 columns">
+								<img src="images/red-hair-girl.jpg" alt="Red Hair">
+							</div>
+							<div class="medium-7 columns">
+								<h1>Michael Ormond</h1>
+								<div class="rating">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p>He made his film debut with a minor part in Back to The Future Part II and the he became very popular.</p>
+
+								<p>
+									<button class="btn">Normal</button>
+									<button class="btn btn--warning">Warning</button>
+									<button class="btn btn--error">Error</button>
+								</p>
+
+							</div>
+
+						</div>
+						<footer class="content__footer">
+							<div class="row">
+									<div class="medium-5 columns">
+										<h1>Tags</h1>
+										<p>He made his film debut with a minor part in Back to The Future Part II</p>
+									</div>
+									<div class="medium-7 columns">
+										<ul class="tags">
+											<li class="tag">
+												<a href="#" class="tag__content">Design</a>
+											</li>
+											<li class="tag">
+												<a href="#" class="tag__content">Illutration</a>
+											</li>
+											<li class="tag">
+												<a href="#" class="tag__content">Art</a>
+											</li>
+											<li class="tag">
+												<a href="#" class="tag__content">Grid</a>
+											</li>
+											<li class="tag">
+												<a href="#" class="tag__content">Interface</a>
+											</li>
+										</ul>
+									</div>
+							</div>
+						</footer>						
+					</div>
+					<div class="content" id="panel2">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error impedit quod debitis iusto itaque corporis nam? Error repudiandae minima omnis.</p>
+					</div>
+					<div class="content" id="panel3">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error impedit quod debitis iusto itaque corporis nam? Error repudiandae minima omnis.</p>
+					</div>
+				</div>
+			</div>
+				
 		</div>
 	</div>
 	

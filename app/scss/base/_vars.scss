@@ -1,4 +1,30 @@
-// Color
-$color-body-1: #C04848;
-$color-body-2: #480048;
+// Colors
+$color-body-1: #C9FFBF;
+$color-body-2: #FFAFBD;
 
+$color-1: #54bc75;
+$color-2: #e86741;
+$color-3: #ebc85e;
+$color-4: #8e8071;
+$color-5: #5c5248;
+$color-white: #fff;
+
+$color-panel: #b1a599;
+
+$color-body-text: $color-4;
+$color-h-text: $color-5;
+
+$color-primary: $color-1;
+$color-secondary: $color-2;
+$color-warning: $color-3;
+
+$color-box-shadow: #AB8B6E;
+
+// Fonts
+$font-family-sans-serif: "Dosis", sans-serif;
+$font-family-serif: "Droid Serif", serif;
+
+$body-font-family: $font-family-sans-serif;
+$h-font-family: $font-family-serif;
+
+$line-height: 1rem;
