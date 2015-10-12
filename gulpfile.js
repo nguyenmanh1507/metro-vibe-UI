@@ -1,17 +1,18 @@
 'use strict';
 
-var gulp = require('gulp'),
-		sass = require('gulp-sass'),
-		jshint = require('gulp-jshint'),
-		rename = require('gulp-rename'),
-		sourcemaps = require('gulp-sourcemaps'),
-		wiredep = require('wiredep').stream,
-		useref = require('gulp-useref'),
-		gulpif = require('gulp-if'),
-		uglify = require('gulp-uglify'),
-		minifyCss = require('gulp-minify-css'),
-		del = require('del'),
-		browserSync = require('browser-sync')
+var gulp              = require('gulp'),
+		sass              = require('gulp-sass'),
+		jshint            = require('gulp-jshint'),
+		rename            = require('gulp-rename'),
+		sourcemaps        = require('gulp-sourcemaps'),
+		wiredep           = require('wiredep').stream,
+		useref            = require('gulp-useref'),
+		gulpif            = require('gulp-if'),
+		uglify            = require('gulp-uglify'),
+		minifyCss         = require('gulp-minify-css'),
+		del               = require('del'),
+		browserSync       = require('browser-sync'),
+		autoprefixer      = require('gulp-autoprefixer')
 ;
 
 // Scss task
@@ -84,6 +85,14 @@ gulp.task('serve', function() {
 	gulp.watch('app/scss/**/*.scss', ['sass']);
 	gulp.watch('app/*.html').on('change', browserSync.reload);
 	gulp.watch('app/js/*.js', ['js-watch']);
+});
+
+// Autoprefixer CSS
+gulp.task('autoprefix', function() {
+	return gulp.src('./app/css/app.css')
+		.pipe(autoprefixer())
+		.pipe(gulp.dest('./app/css'))
+		;
 });
 
 // Build task
